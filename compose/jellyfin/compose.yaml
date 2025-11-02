@@ -13,8 +13,8 @@ services:
       - NVIDIA_VISIBLE_DEVICES=all
       - NVIDIA_DRIVER_CAPABILITIES=all
     volumes:
-      - ./config:/config
-      - ./cache:/cache
+      - jellyfin-cache:/cache
+      - jellyfin-config:/config
       - type: bind
         source: /media/medias
         target: /media
@@ -27,4 +27,8 @@ services:
             - driver: nvidia
               count: all
               capabilities: [gpu]
-
+volumes:
+  jellyfin-cache:
+    driver: local
+  jellyfin-config:
+    driver: local
