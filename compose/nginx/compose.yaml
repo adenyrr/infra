@@ -1,0 +1,21 @@
+services:
+    swag:
+        image: lscr.io/linuxserver/swag:latest
+        container_name: swag
+        cap_add:
+        - NET_ADMIN
+        environment:
+        - PUID=1000
+        - PGID=1000
+        - TZ=Etc/UTC
+        - URL=${URL}
+        - VALIDATION=dns
+        - SUBDOMAINS=wildcard
+        - DNSPLUGIN=ovh
+        - DOCKER_MODS=linuxserver/mods:swag-dashboard
+        volumes:
+        - ./config:/config
+        ports:
+        - 443:443
+        - 81:81
+        restart: unless-stopped
