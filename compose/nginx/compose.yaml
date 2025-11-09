@@ -13,6 +13,7 @@ services:
         - SUBDOMAINS=wildcard
         - DNSPLUGIN=ovh
         - DOCKER_MODS=linuxserver/mods:swag-dashboard
+        - SWAG_AUTORELOAD=true
         volumes:
         - ./config:/config
         ports:
