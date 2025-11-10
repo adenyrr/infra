@@ -14,7 +14,7 @@ services:
         - SUBDOMAINS=wildcard
         - EXTRA_DOMAINS=${URL2}
         - DNSPLUGIN=ovh
-        - DOCKER_MODS=linuxserver/mods:swag-dashboard|DOCKER_MODS=linuxserver/mods:swag-crowdsec|DOCKER_MODS=linuxserver/mods:swag-cloudflare-real-ip|linuxserver/mods:swag-dbip
+        - DOCKER_MODS=linuxserver/mods:swag-dashboard|DOCKER_MODS=linuxserver/mods:swag-cloudflare-real-ip|linuxserver/mods:swag-dbip
         - SWAG_AUTORELOAD=true
         volumes:
         - ./config:/config
