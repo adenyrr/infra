@@ -19,6 +19,7 @@ services:
         volumes:
         - ./config:/config
         ports:
-        - 443:443
+        - 443:443/tcp
+        - 443:443/udp #quic
         - 81:81
         restart: unless-stopped
