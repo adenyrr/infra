@@ -21,7 +21,7 @@ services:
     container_name: open-webui 
     image: ghcr.io/open-webui/open-webui:cuda
     ports:
-        - 8080:8080
+        - 8085:8080
     volumes:
          - ./open-webui:/app/backend/data
     env_file:
