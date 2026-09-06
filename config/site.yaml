@@ -7,7 +7,7 @@
 
 site:
   title: "adenyrr"
-  description: "About, infra, blog, docu and everything of adenyrr"
+  description: "About, infra, docu and everything of adenyrr"
   url: "https://adenyrr.me"
   author: "adenyrr"
   email: "adenyrr@proton.me"
@@ -29,7 +29,7 @@ gpg:
 # -----------------------------------------------------------------------------
 features:
   infra: true
-  blog: true
+  blog: false
   docu: true
   train: true
 
@@ -110,7 +110,7 @@ footer:
       url: "https://astro.build/"
     - label: "GitLab"
       url: "https://gitlab.com/adenyrr"
-  rss: true
+  rss: false
 
 # -----------------------------------------------------------------------------
 # SEO

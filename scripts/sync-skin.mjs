@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 
 const packageName = '@adenyrr/astro-sovereign-tty';
-const expectedVersion = '2.1.2';
+const expectedVersion = '3.0.1';
 
 const lockfile = JSON.parse(readFileSync(new URL('../package-lock.json', import.meta.url), 'utf8'));
 const installed = lockfile.packages?.[`node_modules/${packageName}`];

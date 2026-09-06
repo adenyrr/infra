@@ -7,6 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import expressiveCode from 'astro-expressive-code';
 import robotsTxt from 'astro-robots-txt';
+import sovereignTty from '@adenyrr/astro-sovereign-tty/integration';
 import fs from 'node:fs';
 import YAML from 'yaml';
 import { remarkReadingTime } from './src/utils/reading-time.ts';
@@ -17,6 +18,7 @@ const siteConfig = YAML.parse(fs.readFileSync(new URL('./config/site.yaml', impo
 export default defineConfig({
   site: siteConfig.site.url,
   integrations: [
+    sovereignTty(),
     expressiveCode({
       themes: ['one-dark-pro'],
       defaultProps: {

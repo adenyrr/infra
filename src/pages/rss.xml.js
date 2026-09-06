@@ -1,8 +1,12 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
-import { getSiteConfig } from '../utils/config';
+import { getSiteConfig, isFeatureEnabled } from '../utils/config';
 
 export async function GET(context) {
+  if (!isFeatureEnabled('blog')) {
+    return new Response(null, { status: 404 });
+  }
+
   const posts = await getCollection('blog');
   const config = getSiteConfig();
   return rss({

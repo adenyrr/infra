@@ -37,6 +37,21 @@ const config = getSiteConfig();
     <Footer config={config} />
     <Animations />
 
+    <script>
+      document.addEventListener('click', (event) => {
+        if (event.defaultPrevented || !(event.target instanceof Element)) return;
+
+        const link = event.target.closest<HTMLAnchorElement>('a.back-top');
+        if (!link) return;
+
+        event.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        });
+      });
+    </script>
+
     <style>
       /* Barre de progression de lecture — scroll-driven animation native,
          zéro JavaScript. Masquée si le navigateur ne supporte pas
